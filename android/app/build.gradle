@@ -31,7 +31,7 @@ if (keystorePropertiesFile.exists()) {
 
 
 android {
-    namespace = "com.abstarnews.la_fitnesse"
+    namespace = "com.abnews.la_fitnes"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -41,22 +41,20 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.abstarnews.la_fitnesse"
+        applicationId = "com.abnews.la_fitnes"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
     }
-    signingConfigs {
-    release {
-        keyAlias keystoreProperties['keyAlias']
-        keyPassword keystoreProperties['keyPassword']
-        storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-        storePassword keystoreProperties['storePassword']
-    }
-} 
-
-
+        signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['storePassword']
+        }
+    } 
     buildTypes {
         release {
             signingConfig signingConfigs.release
